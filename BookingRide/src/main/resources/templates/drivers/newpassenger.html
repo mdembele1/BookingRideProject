@@ -1,0 +1,19 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head>
+    <title>Handling Form Submission</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+	<h1>Result</h1>
+    <p th:text="'ID: ' + ${passenger.passid}" />
+    <p th:text="'First Name: ' + ${passenger.passfname}" />
+    <p th:text="'Last Name: ' + ${passenger.passlname}" />
+    <p th:text="'Email: ' + ${passenger.passemail}" />
+    <p th:text="'Password: ' + ${passenger.passpwd}" />
+    <p th:text="'phone:: ' + ${passenger.passphonenumb}" />
+  
+    
+    <a href="/passenger_registration">login</a>
+</body>
+</html>

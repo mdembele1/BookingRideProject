@@ -1,0 +1,198 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>Booking Ride</title>
+    <!--Link for the favicons on the title-->
+    <link rel="shortcut icon" href="#" />
+  <!-- google font icons --->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+     
+         <!-- Compiled and minified CSS for materialize css -->
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  
+         <style>
+                main {
+      padding-left: 300px;
+    }
+  
+    @media only screen and (max-width : 992px) {
+      header, main, footer {
+        padding-left: 0;
+      }
+    }
+         </style>
+  </head>
+  <body>
+    <nav>
+        <div class="nav-wrapper background black">
+          <a href="#!" class="brand-logo center"></a>
+  <!--------- sidenav Trigger ------->
+          <a href="/" data-target="slide-out" class="sidenav-trigger left show-on-large"><i class="material-icons">menu</i></a>
+          <ul class="left hide-on-med-and-down right">
+            <li><a href="login">Login</a></li>
+            <li><a href="#">Components</a></li>
+            <li class="active" id="/"><a href="#contact">Contact Us</a></li>
+            <li><a href="#" class="tooltipped btn-floating btn-small white" data-position="bottom" data-tooltip="Instagram"> 
+              <i class="fab fa-instagram"></i>
+            </a></li>
+            <li><a href="#" class="tooltipped waves-effect btn-floating btn-small social fa-facebook pink" data-position="bottom" data-tooltip="Facebook">
+              <i class="fab fa-facebook"></i>
+            </a></li>
+            <li><a href="#" class=" tooltipped waves-effect btn-small btn-floating social twitter blue" data-position="bottom" data-tooltip="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a></li>
+  
+          </ul>
+  
+                             
+        </div>
+      </nav>
+  <!--------- sidenav content ------->
+      <ul id="slide-out " class="sidenav sidenav-fixed white ">
+        <li><div class="user-view">
+          <div class="background pink darken-3">
+            <img src="#">
+          </div>
+          <a href="#user"><img class="circle" src="../picture/JMH06834.jpg"></a>
+          <a href="#name"><span class="white-text name">Mamadou Dembele</span></a> 
+          <a href="#email"><span class="white-text email">mamadou@gmail.com</span></a>
+        </div></li>
+        <li><a href="registration.html"><i class="material-icons"> my_location</i>My location</a></li>
+        <li><a href="#!"><i class="material-icons">share</i>Share my location</a></li>
+        <li><a href="#!"><i class="material-icons">location_on</i>Current ride</a></li>
+        <li><a href="#!"><i class="material-icons">share</i>My rides</a></li>
+        <li><a href="#contact"><i class="material-icons">share</i>Contact us</a></li>
+              <li><a class="waves-effect blue btn " href="#!">Logout</a></li>
+      </ul>
+  <!-------------------- Content part started ------------------->
+  <!--------------- Add all content here ------------------------>
+  <main> 
+  
+    
+  
+    
+  
+  
+  <!-- contact form -->
+  <section class="section container scrollspy" id="">
+    <div class="row">
+      <div class="card-panel center align col s12 l12">
+
+        <h5 class="red-text text-darken-4">Trip Backlog</h5>
+
+           <div class="input-field">
+            <i class="material-icons prefix">account_circle</i>
+            <input  id="AdressPickupLocat" type="text" class="validate">
+            <label for="AdressPickupLocat">Pickup location</label>
+          </div>
+
+
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem neque dolor expedita accusantium sunt quidem iure, necessitatibus nesciunt quia delectus sequi dignissimos dolorum et aliquid sit saepe maiores ipsam reprehenderit!
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+           Vestibulum at lacus congue, suscipit elit nec, tincidunt orci</p>
+        
+      </div>
+      <div class=" card-panel center align col s12 l5 offset-l2">
+        <form action="#" th:action="@{/trip_request_form}" th:object="${trip}"
+                                                                       method="post">
+          <h5 class=" red-text text-darken-4" id="contact">Order Ride</h5>
+  
+          <div class="input-field">
+            <i class="material-icons prefix">account_circle</i>
+            <input  id="adresspickuplocat" th:field="${trip.adressPickuplocat}" type="text" class="validate">
+            <label for="adresspickuplocat">Pickup location</label>
+          </div>
+         
+            <div class="input-field">
+              <i class="material-icons prefix">account_circle</i>
+              <input  id="AdressDropOffLocat" th:field="${trip.adressdropOfflocat}" type="text" class="validate">
+              <label for="AdressDropOffLocat">Dropoff location</label>
+            </div>
+              
+            <div class="input-field">
+              <i class="material-icons prefix">folder</i>
+              <input  id="Proposfare" th:field="${trip.Proposfare}" type="text" class="validate">
+              <label for="Proposfare">Fare</label>
+            </div>
+                
+           <div class="input-field">
+              <i class="material-icons prefix">date_range</i>
+              <input type="text" th:field="${trip.tripdate}"id="date" class="datepicker">
+              <label for="date">Date & Time pickup</label>
+            </div>
+           <div class="left-align input-field">
+
+               <input type="hidden" id="tripid" th:field="${trip.tripid}" >
+         
+         <div class="input-field center">
+	        <button class="btn waves-effect waves-light"
+			type="submit" name="action">ASK FOR RIDE</button>
+        </div>
+        </form>
+      </div>
+      
+    </div>
+
+    
+  </section>
+  
+  
+  <!-- footer -->
+  <footer class="page-footer grey darken-3">
+    <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5>About Me</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+          </div>
+  
+         <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Connect</h5>
+            <ul class="social-link">
+              <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/demboss01" target="_blank">Facebook</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Linked In</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+          </ul>
+         </div>
+      
+        </div>
+     </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container center-align">&copy; 2020 Case Study by <a red darken-3>Mamadou</a>  - Booking Ride website </div>
+    </div>
+  </footer>
+  </main>
+  <!-------------------- Content part finished ------------------->
+  <!--jQUERY-->
+  
+  
+  <script
+        src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+        crossorigin="anonymous"></script>
+     <!-- Compiled and minified JavaScript -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>       
+     
+     
+  <!-- Initialize SIdenav -->
+     <script>
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+  $('.tooltipped').tooltip();
+  
+  $('.datepicker').datepicker({
+          disableWeekends: false,
+          yearRange: 1
+  });
+     </script>
+    </body>
+  </html>

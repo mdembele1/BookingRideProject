@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Passenger Manager</title>
+</head>
+<body>
+	<div align="center">
+		<h1>Passenger Registration</h1>
+		<a href="passenger">Information's Passenger</a>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Passenger ID</th>
+					<th>First Name</th>
+					<th>Last Name</th>
+					<th>Email</th>
+					<th>Password</th>
+					<th>Phone</th>
+					<th>Picture</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="passenger : ${listPassenger}">
+					<td th:text="${passenger.passid}">ID</td>
+					<td th:text="${passenger.passfname}">First Name</td>
+					<td th:text="${passenger.Passlname}">Last Name</td>
+					<td th:text="${passenger.passemail}">Email</td>
+					<td th:text="${passenger.passpwd}">Password</td>
+					<td th:text="${passenger.passphonenumb}">Phone</td>
+					<td th:text="${passenger.passphoto}">Picture</td>
+					<td><a th:href="@{'/edit/' + ${passenger.passid}}">Edit</a></td>
+					
+					<td><a th:href="@{'/delete/' + ${passenger.passid}}">Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

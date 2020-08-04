@@ -1,0 +1,337 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewporx``t" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Booking Ride</title>
+  <!--Link for the favicons on the title-->
+  <link rel="shortcut icon" href="#" />
+<!-- google font icons --->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+       <!-- Compiled and minified CSS for materialize css -->
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+       <style>
+              main {
+    padding-left: 300px;
+  }
+
+  @media only screen and (max-width : 992px) {
+    header, main, footer {
+      padding-left: 0;
+    }
+  }
+       </style>
+</head>
+<body>
+  <nav>
+    
+      <div class="nav-wrapper background black ">
+        <a href="#" class="brand-logo center"></a>
+<!--------- sidenav Trigger ------->
+        <a href="#" data-target="slide-out" class="sidenav-trigger left show-on-large"><i class="material-icons">menu</i></a>
+        <ul class="left hide-on-med-and-down right ">
+          <li><a href="login">Login</a></li>
+          <li><a href="gallery">Gallery</a></li>
+          <li class="active" id="contact_index"><a href="#contact ">Contact Us</a></li>
+          <li><a href="#" class="tooltipped btn-floating btn-small white" data-position="bottom" data-tooltip="Instagram"> 
+            <i class="fab fa-instagram"></i>
+          </a></li>
+          <li><a href="#" class="tooltipped waves-effect btn-floating btn-small social fa-facebook pink" data-position="bottom" data-tooltip="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a></li>
+          <li><a href="#" class=" tooltipped waves-effect btn-small btn-floating social twitter blue data-position="data-position="bottom" data-tooltip="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a></li>
+
+        </ul>
+
+                           
+      </div>
+    </nav>
+
+<!--------- sidenav content ------->
+    <ul id="slide-out " class="sidenav sidenav-fixed white ">
+      <li><div class="user-view">
+        <div class="background BLACK darken-3">
+        </div>
+        <a href="https://www.linkedin.com/in/dembelemamadou/"><img class="responsive-img" src="../picture/JMH06746.jpg"></a>
+        <h6 class="center-align  black-text">Presented by:</h6>
+        <h5 class="center-align  background-red black-text">Mamadou Dembele</h5>
+        </div>
+
+      <div class="background white-text">
+        <ul class="social-link">
+            <li><a class="pink-text text-lighten-3" href="https://www.facebook.com/demboss01" target="_blank">Facebook</a></li>
+            <li><a class="blue-text text-lighten-3" href="#">Twitter</a></li>
+            <li><a class="green-text text-lighten-3" href="https://www.linkedin.com/in/dembelemamadou/">LinkedIn</a></li>
+            <li><a class="yellow-text text-lighten-3" href="#">Instagram</a></li>
+        </ul>
+        <li><a href="#contact"><i class="material-icons"></i>Contact us</a></li>
+        
+         <form th:action="@{/}" method="post">
+            <input type="submit" value="Sign Out"/>
+        </form>
+        <!-- <li><a class="waves-effect blue btn" href="login">Logout</a></li> -->
+     	</div>
+    </ul>
+<!-------------------- Content part started ------------------->
+<!--------------- Add all content here ------------------------>
+<main> 
+
+  
+  <div class="container center-align blue">
+    <h2>Booking Ride Website</h2>
+    <div class="row">
+      <div class="col s12 l6">  
+        <div class="card">
+          <div class="card-image">
+            <img src="../picture/driver-cardimg.jpg" alt="">
+            <a href="" class="halfway-fab btn-floating pink pulse">
+              <i class="material-icons">favorite</i>
+            </a>
+          </div>
+          <div class="card-content">
+            <span class="card-title center-align text-pink">DRIVER</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis aliquam orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+           
+          </div>
+          <div class="card-action" >
+            <a href="login">LOGIN</a>
+            <a href="driver_registration">REGISTRATION</a>
+          </div>
+        </div>
+      </div>
+
+      <!--Passenger Card-->
+      <div class="col s12 l6">
+        <div class="card">
+          <div class="card-image">
+            <img src="../picture/passenger-img.jpg" alt="">
+            <a href="" class="halfway-fab btn-floating pink pulse">
+              <i class="material-icons">favorite</i>
+            </a>
+          </div>
+          <div class="card-content">
+            <span class="card-title center-align text-black">PASSENGER</span>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean quis aliquam orci. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+          </div>
+          <div class="card-action text-black">
+            <a  href="login">LOGIN</a>
+            <a href="passenger_registration">REGISTRATION</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class = "row">
+    <div class = "col l12 white">
+       <p >This text will use 12 columns on a small screen, 4 on a medium screen (m4),
+          and 3 on a large screen (l3).
+          This text will use 12 columns on a small screen, 4 on a medium screen (m4),
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+         dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+      </p>
+            <div class="col s6 white valign-wrapper"  indigo>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitati  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+           	  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+              Lorem ipsum dolor sit, amet consectetur  
+            </div>
+                  <div class="col s6 white valign-wrapper" red >
+                    <img src="../picture/20200204_105942.jpg" alt="" class="responsive-img">
+                  </div>
+        
+    </div>
+         <div class = "col l12 white">
+              <p>This text will use 12 columns on a small screen, 4 on a medium screen (m4),
+                  and 3 on a large screen (l3).
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitati
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                </p>
+      </div>
+
+  <div class = "col l12 white">
+              <p>
+                <h3 class="center-align"> BOOK YOUR RIDE IN JUST A FEW STEP!</h3>
+
+                This text will use 12 columns on a small screen, 4 on a medium screen (m4),
+                  and 3 on a large screen (l3).
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+                </p>
+      </div>
+
+      <div class = "col l12 blue-grey darken-3">
+        <p>This text will use 12 columns on a small screen, 4 on a medium screen (m4),
+            and 3 on a large screen (l3).
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+         
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+          </p>
+</div>
+
+
+<!-- Contact form -->
+<section class="section container scrollspy" id="">
+  <div class="row">
+    <div class="card-panel center align col s12 l5">
+      <h5 class="red-text text-darken-4">Get in Touch</h5>
+      Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem neque dolor expedita accusantium sunt quidem iure, necessitatibus nesciunt quia delectus sequi dignissimos dolorum et aliquid sit saepe maiores ipsam reprehenderit!
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+         Vestibulum at lacus congue, suscipit elit nec, tincidunt orci</p>
+      
+    </div>
+    <div class=" card-panel center align col s12 l5 offset-l2">
+      <form>
+        <h5 class=" red-text text-darken-4" id="contact">Contact Us</h5>
+
+        <div class="input-field">
+          <i class="material-icons prefix">account_circle</i>
+          <input  id="last_name" type="text" class="validate">
+          <label for="last_name">Your Last Name</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <input type="email" id="email">
+          <label for="email">Your Email</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">call</i>
+          <input type="tel" id="icon_telephone">
+          <label for="icon_telephone"></label>
+        </div>
+        
+        <div class="input-field">
+          <i class="material-icons prefix"></i>
+          <textarea id="message" class="materialize-textarea" cols="20" rows="80"></textarea>
+          <label for="message">Your Message</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix"></i>
+          <input type="text" id="date" class="datepicker">
+          <label for="date">Choose issue date (Optional)...</label>
+        </div>
+          <div class="left-align input-field">
+            <p>Your Profil:</p>
+            <p>
+              <label>
+                <input type="checkbox">
+                <span>Customer</span>
+              </label>
+            </p>
+          <p>
+            <label>
+              <input type="checkbox">
+              <span>Driver</span>
+            </label>
+          </p>
+        </div>
+        <div class="input-field center">
+          <button class="btn blue">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+
+<!-- footer -->
+<footer class="page-footer grey darken-3">
+  <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5>About Me</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        </div>
+
+       <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul class="social-link">
+            <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/demboss01" target="_blank">Facebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://www.linkedin.com/in/dembelemamadou/">LinkedIn</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+        </ul>
+       </div>
+    
+      </div>
+   </div>
+  <div class="footer-copyright grey darken-4">
+    <div class="container center-align">&copy; 2020 Case Study by <a red darken-3>Mamadou</a>  - Booking Ride website </div>
+  </div>
+</footer>
+</main>
+<!-------------------- Content part finished ------------------->
+<!--jQUERY-->
+
+
+<script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>       
+   
+   
+<!-- Initialize SIdenav -->
+   <script>
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+$('.tooltipped').tooltip();
+
+$('.scrollspy').scrollSpy();
+
+$('.datepicker').datepicker({
+        disableWeekends: false,
+        yearRange: 1
+        
+});
+
+   </script>
+  </body>
+</html>

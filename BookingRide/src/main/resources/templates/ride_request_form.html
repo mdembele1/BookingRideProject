@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Ride</title>
+    <!--Link for the favicons on the title-->
+    <link rel="shortcut icon" href="#" />
+    
+<!-- google font icons --->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+  <!-- Compiled and minified CSS for materialize css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <style>
+         main {
+padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+header, main, footer {
+ padding-left: 0;
+}
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper background black">
+      <a href="#!" class="brand-logo center"></a>
+<!--------- sidenav Trigger ------->
+      <a href="#" data-target="slide-out" class="sidenav-trigger left show-on-large"><i class="material-icons">menu</i></a>
+      <ul class="left hide-on-med-and-down right">
+        <li><a href="/">Menu</a></li>
+        <li><a href="gallery">Gallery</a></li>
+        <li class="active" id="contact_index"><a href="/">Contact Us</a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small white" data-position="bottom" data-tooltip="Instagram"> 
+          <i class="fab fa-instagram"></i>
+        </a></li>
+        <li><a href="#" class="tooltipped waves-effect btn-floating btn-small  blue social fa-facebook" data-position="bottom" data-tooltip="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a></li>
+        <li><a href="#" class="tooltipped waves-effect waves-light btn-small btn-floating pink social twitter" data-position="bottom" data-tooltip="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a></li>
+
+      </ul>
+
+                         
+    </div>
+  </nav>
+<!--sidenav content 
+<ul id="slide-out " class="sidenav sidenav-fixed white ">
+  <li><div class="user-view">
+    <div class="background BLACK darken-3">
+    </div>
+    <a href="#user"><img class="responsive-img" src="../picture/JMH06746.jpg"></a>
+    <h6 class="center-align  white-text">Presented by:</h6>
+    <h5 class="center-align  white-text">Mamadou Dembele</h5>
+    </div>
+
+  <div class="background white-text">
+    <li><a href="#"><i class="material-icons"> my_location</i>My location</a></li>
+    <li><a href="#!"><i class="material-icons">share</i>Share my location</a></li>
+    <li><a href="#!"><i class="material-icons">location_on</i>Current ride</a></li>
+    <li><a href="#!"><i class="material-icons">share</i>My rides</a></li>
+    <li><a href="#contact"><i class="material-icons">share</i>Contact us</a></li>
+    <li><a class="waves-effect blue btn" href="login.html">Logout</a></li>
+ </div>
+</ul>-->
+<!-------------------- Content part started ------------------->
+
+
+<!-- contact form -->
+
+<!--Vehicle Registration
+-->
+<section class="section container scrollspy" id="">
+  <div class="row">
+
+    <div class="card-panel center align col s12 l5">
+        <h5 class=" red-text text-darken-4" id="contact"> Welcome to Your plateform </h5>
+
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+      <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+    <p>Mauris dolor augue, vulputate in pharetra ac, facilisis nec libero. Fusce condimentum gravida urna, vitae scelerisque erat ornare nec.</p>
+    <p>Lorem
+    </div>
+
+     
+<!--Driver registration-->
+
+    <div class=" card-panel center align col s12 l5 offset-l2">
+     
+        <h5 class=" red-text text-darken-4" id="contact">Passenger registration</h5>
+ <form action="#" th:action="@{/passenger_registration}" th:object="${passenger}"
+                                                                       method="post">
+        <div class="input-field">
+          <i class="material-icons prefix">account_circle</i>
+          <input  id="first_name" th:field="${passenger.passfname}" type="text" class="validate">
+          <label for="first_name">First Name</label>
+        </div>
+        <div class="input-field">
+          <i class="material-icons prefix">account_circle</i>
+          <input  id="last_name" th:field="${passenger.passlname}" type="text">
+          <label for="last_name">Last Name</label>
+        </div>
+
+        <div class="input-field">
+          <i class="material-icons prefix">email</i>
+          <input type="email" th:field="${passenger.passemail}" id="email">
+          <label for="email">Your Email</label>
+        </div>
+     
+          <div class="input-field">
+            <i class="material-icons prefix">email</i>
+            <input id="email" type="email" th:field="${passenger.passemail}" >
+            <label for="email" data-error="wrong" data-success="right">Confirm Email</label>
+          </div>
+          <div class="input-field">
+            <i class="material-icons prefix">https</i>
+            <input id="password" th:field="${passenger.passpwd}" type="password" >
+            <label for="password">Password</label>
+          </div>
+
+          <div class="input-field">
+            <i class="material-icons prefix">call</i>
+            <input  id="phone_number" th:field="${passenger.passphonenumb}" type="tel" >
+            <label for="phone_number">phone number</label>
+          </div>
+                   
+            <input type="hidden" id="passid" th:field="${passenger.passid}" >
+            	
+
+        <div class="input-field center">
+	        <button class="btn waves-effect waves-light"
+			type="submit" name="action">REGISTER</button>
+        </div>
+      </form>
+  </div>
+  </div>
+</section>
+
+
+<!-- footer -->
+<footer class="page-footer grey darken-3">
+    <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5>About Me</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+          </div>
+  
+         <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Connect</h5>
+            <ul class="social-link">
+              <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/demboss01" target="_blank">Facebook</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Linked In</a></li>
+              <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+          </ul>
+         </div>
+      
+        </div>
+     </div>
+    <div class="footer-copyright grey darken-4">
+      <div class="container center-align">&copy; 2020 Case Study by <a red darken-3>Mamadou</a>  - Booking Ride website </div>
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+<!-------------------- Content part finished ------------------->
+<!--jQUERY-->
+
+
+<script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>       
+   
+   
+<!-- Initialize SIdenav -->
+   <script>
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+$('.tooltipped').tooltip();
+
+$('.datepicker').datepicker({
+        disableWeekends: false,
+        yearRange: 1
+});
+//the function M.updateTextFields(); 
+//to reinitialize all the Materialize labels on the page if you are dynamically adding inputs.
+$(document).ready(function() {
+    M.updateTextFields();
+  });
+        
+
+   </script>
+</html>

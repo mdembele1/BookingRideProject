@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!--Link for the favicons on the title-->
+    <link rel="shortcut icon" href="#" />
+    
+<!-- google font icons --->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+  <!-- Compiled and minified CSS for materialize css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <style>
+         main {
+padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+header, main, footer {
+ padding-left: 0;
+}
+}
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="nav-wrapper background black">
+      <a href="#!" class="brand-logo center"></a>
+<!--------- sidenav Trigger ------->
+      <a href="#" data-target="slide-out" class="sidenav-trigger left show-on-large">
+        <ul class="left hide-on-med-and-down right">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li class="active"><a href="index.html">Contact Us</a></li>
+        <li><a href="#" class="tooltipped btn-floating btn-small white" data-position="bottom" data-tooltip="Instagram"> 
+          <i class="fab fa-instagram"></i>
+        </a></li>
+        <li><a href="#" class="tooltipped waves-effect btn-floating btn-small blue social fa-facebook" data-position="bottom" data-tooltip="Facebook">
+          <i class="fab fa-facebook"></i>
+        </a></li>
+        <li><a href="#" class="tooltipped waves-effect waves-light btn-small btn-floating pink social twitter" data-position="bottom" data-tooltip="Twitter">
+          <i class="fab fa-twitter"></i>
+        </a></li>
+
+      </ul>
+                         
+    </div>
+  </nav>
+
+
+
+<!--Vehicle Registration-->
+
+<form action="#" th:action="@{/save}" th:object="${theDrivers}"
+			method="post">
+			
+<section class="section container scrollspy" id="">
+  <div class="row">
+
+    <div class="card-panel center align col s12 l5">
+      <h5 class= "btn pink white-text text-darken-4 ">Vehicle Registration</h5>
+
+      <div class="input-field">
+        <i class="material-icons prefix">lock_open</i>
+        <input  id="vin_number" type="text" class="validate">
+        <label for="vin_number">VIN number</label>
+      </div>
+
+      <div class="input-field">
+        <i class="material-icons prefix">dvr</i>
+        <input  id="VehicPlateNumber" type="text" class="validate">
+        <label for="VehicPlateNumber">Plate number</label>
+      </div>
+
+      <div class="file-field input-field">
+        <div class="btn blue">
+          <span>img</span>
+          <input type="file">
+        </div>
+        <div class="file-path-wrapper">
+          <input class="file-path validate" type="text">
+          <label for="date">Vehicle picture</label>
+        </div>
+      </div>
+
+      <div class="input-field">
+        <i class="material-icons prefix">looks</i>
+        <input  id="VehicType" type="text" class="validate">
+        <label for="VehicType">Type</label>
+      </div>
+
+      <div class="input-field">
+        <i class="material-icons prefix">invert_colors</i>
+        <input  id="VehiColor" type="text" class="validate">
+        <label for="VehiColor">Color</label>
+      </div>
+
+      <div class="input-field">
+        <i class="material-icons prefix">star_border</i>
+        <input  id="VehicModel" type="text" class="validate">
+        <label for="VehicModel">Model</label>
+      </div>
+
+
+          
+         <div class="file-field input-field">
+          <div class="btn blue">
+            <span>img</span>
+            <input type="file">
+          </div>
+          <div class="file-path-wrapper">
+            <input class="file-path validate" type="text">
+            <label for="picture">Insert your picture</label>
+          </div>
+        </div>
+  		<div class="card-action" >
+             <a href="login">REGISTRATION</a>
+        </div>
+  </div>
+       
+      </form>
+   
+
+
+
+<!-- footer -->
+<footer class="page-footer grey darken-3">
+  <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5>About Me</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        </div>
+
+       <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul class="social-link">
+            <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/demboss01" target="_blank">Facebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Linked In</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+        </ul>
+       </div>
+    
+      </div>
+   </div>
+  <div class="footer-copyright grey darken-4">
+    <div class="container center-align">&copy; 2020 Case Study by <a red darken-3>Mamadou</a>  - Booking Ride website </div>
+  </div>
+</footer>
+
+<!-------------------- Content part finished ------------------->
+<!--jQUERY-->
+
+
+<script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>       
+   
+   
+<!-- Initialize SIdenav -->
+   <script>
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+$('.tooltipped').tooltip();
+
+$('.datepicker').datepicker({
+        disableWeekends: false,
+        yearRange: 1
+});
+//the function M.updateTextFields(); 
+//to reinitialize all the Materialize labels on the page if you are dynamically adding inputs.
+$(document).ready(function() {
+    M.updateTextFields();
+  });
+        
+
+   </script>
+</html>

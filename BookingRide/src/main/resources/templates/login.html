@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Ride</title>
+     <!--Link for the favicons on the title-->
+    <link rel="shortcut icon" href="#" />
+
+<!-- google font icons --->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+  <!-- Compiled and minified CSS for materialize css -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <style>
+         main {
+padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+header, main, footer {
+ padding-left: 0;
+}
+}
+  </style>
+</head>
+<body>
+
+  <nav class="black">
+    <div class="nav-wrapper">
+      <a href="#!" class="brand-logo center"></a>
+    <!--------- sidenav Trigger ------->
+      <a href="#" data-target="mobile-nav" class="sidenav-trigger "><i class="material-icons">menu</i></a>
+      <ul class="left hide-on-med-and-down right">
+        <li><a href="/">Menu</a></li>
+        <li><a href="gallery">Gallery</a></li>
+        <li class="active" id="contact_index"><a href="/">Contact Us</a></li>
+       <li><a href="#" class="tooltipped btn-floating btn-small white" data-position="bottom" data-tooltip="Instagram"> 
+            <i class="fab fa-instagram"></i>
+          </a></li>
+          <li><a href="#" class="tooltipped waves-effect btn-floating btn-small social fa-facebook pink" data-position="bottom" data-tooltip="Facebook">
+            <i class="fab fa-facebook"></i>
+          </a></li>
+          <li><a href="#" class=" tooltipped waves-effect btn-small btn-floating social twitter blue data-position="data-position="bottom" data-tooltip="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a></li>
+
+      </ul>
+
+                         
+    </div>
+  </nav>
+<!--sidenav content-->
+  <!-- <ul id="slide-out " class="sidenav sidenav-fixed white ">
+    <li><div class="user-view">
+      <div class="background grey darken-3">
+        <img src="#">
+      </div>
+      <a href="#user"><img class="circle" src="../picture/JMH06834.jpg"></a>
+      <a href="#name"><span class="white-text name">Mamadou Dembele</span></a> 
+      <a href="#email"><span class="white-text email">mamadou@gmail.com</span></a>
+    </div></li>
+    <li><a href="registration.html"><i class="material-icons"> my_location</i>My location</a></li>
+    <li><a href="#!"><i class="material-icons">share</i>Share my location</a></li>
+    <li><a href="#!"><i class="material-icons">location_on</i>Current ride</a></li>
+    <li><a href="#!"><i class="material-icons">share</i>My rides</a></li>
+    <li><a href="contact.html"><i class="material-icons">share</i>Contact us</a></li>
+          <li><a class="waves-effect " href="#!">Logout</a></li>
+  </ul> -->
+  
+  
+    <!-------------------- Content part started ------------------->
+
+
+        <!-- Login -->
+    <section class="section container scrollspy" id="">
+    <div class="row">
+      <div class="card-panel center align col s12 l5">
+        <h5 class="red-text text-darken-4">Get in Touch</h5>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem neque dolor expedita accusantium sunt quidem iure, necessitatibus nesciunt quia delectus sequi dignissimos dolorum et aliquid sit saepe maiores ipsam reprehenderit!
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+         </div>
+         
+      	<div class=" card-panel center align col s12 l5 offset-l2">
+      	  <div th:if="${param.error}">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}">
+            You have been logged out.
+        </div>
+  	     	
+        <form  th:action="@{/login}" method="post" th:object="${user}">
+          <h5 class=" red-text text-darken-4" id="contact">Login:</h5>
+          
+          <div class="input-field">
+            <i class="material-icons prefix">account_circle </i>
+         	<input id="email" th:field="${user.user_email}" type="text" class="validate">
+            <label for="email"> Email </label>
+          </div>
+
+          <div class="input-field">
+            <i class="material-icons prefix">https</i>
+            <input id="password" type="password" th:field="${user.user_pwd}"class="validate">
+            <label for="password">Password</label>
+          </div>
+          
+          <div class="col s3" align="center">
+			<button class="btn waves-effect waves-light" type="submit">Login</button>
+		</div>
+		
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <div class = "container col l12   blue lighten-3">
+    <p>This text will use 12 columns on a small screen, 4 on a medium screen (m4),
+        and 3 on a large screen (l3).
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+     
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Illum temporibus quod, corrupti quasi voluptate eveniet exercitationem non sed fugit accusantium doloremque, est sit alias nesciunt quibusdam ab dolore praesentium! Debitis!
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusantium sapiente vel necessitatibus dolor laboriosam sed, animi quibusdam voluptate voluptatibus quod? Adipisci officiis mollitia eveniet, id maxime fuga modi deserunt deleniti?
+      </p>
+</div>
+  
+  
+  
+<!-- footer -->
+<footer class="page-footer grey darken-3">
+  <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5>About Me</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue.</p>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum at lacus congue, suscipit elit nec, tincidunt orci.</p>
+        </div>
+
+       <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul class="social-link">
+            <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/demboss01" target="_blank">Facebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Twitter</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Linked In</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Instagram</a></li>
+        </ul>
+       </div>
+    
+      </div>
+   </div>
+  <div class="footer-copyright grey darken-4">
+    <div class="container center-align"> &copy; 2020 Case Study by <a red darken-3>Mamadou</a>  - Booking Ride website </div>
+  </div>
+</footer>
+
+
+<!-------------------- Content part finished ------------------->
+<!--jQUERY-->
+
+
+<script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"></script>
+   <!-- Compiled and minified JavaScript -->
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>       
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+   
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+   
+<!-- Initialize SIdenav -->
+   <script>
+$(document).ready(function(){
+  $('.sidenav').sidenav();
+});
+$('.tooltipped').tooltip();
+
+
+$('.datepicker').datepicker({
+        disableWeekends: false,
+        yearRange: 50
+});
+//the function M.updateTextFields(); 
+//to reinitialize all the Materialize labels on the page if you are dynamically adding inputs.
+$(document).ready(function() {
+    M.updateTextFields();  
+  });
+        
+   </script>
+   </body>
+</html>
